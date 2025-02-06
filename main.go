@@ -36,7 +36,7 @@ func readData(rw *bufio.ReadWriter) {
 			return
 		}
 		if str != "\n" {
-			fmt.Printf("\x1b[32m%s\x1b[0m", str)
+			fmt.Printf("\x1b[32m%s\x1b[0m>", str)
 		}
 
 	}
@@ -46,7 +46,7 @@ func writeData(rw *bufio.ReadWriter) {
 	stdReader := bufio.NewReader(os.Stdin)
 
 	for {
-		fmt.Print("> ")
+		fmt.Print(">")
 		sendData, err := stdReader.ReadString('\n')
 		if err != nil {
 			fmt.Println("Error reading from stdin")
